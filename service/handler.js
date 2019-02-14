@@ -25,14 +25,12 @@ const isInputValid = input =>
   input.data[0].values.length === 6 &&
   input.data[1].values.length === 6;
 
-const getParsedResult = input => {
-  return {
-    title: "Result",
-    values: input.data[0].values.map(
-      (value, i) => value - input.data[1].values[i]
-    )
-  };
-};
+const getParsedResult = input => ({
+  title: "Result",
+  values: input.data[0].values.map(
+    (value, i) => value - input.data[1].values[i]
+  )
+});
 
 const getSuccessfulResponse = (result, requestId) => ({
   statusCode: 200,
